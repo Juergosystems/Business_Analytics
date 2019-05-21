@@ -7,7 +7,10 @@ import pandas as pd
 data = pd.read_csv('train.csv')
 
 df = pd.DataFrame(data)
-df1 = df.iloc[:, :72]
+df1 = df.iloc[:72 :,]
+
+df1_np = np.array(df1)
+print(df1_np.shape)
 
 print(df1.head())
 
