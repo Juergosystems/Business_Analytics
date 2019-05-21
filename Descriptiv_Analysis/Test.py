@@ -9,11 +9,11 @@ import pandas as pd
 #############################################################################################
 data = pd.read_csv('train.csv')
 df = pd.DataFrame(data)
+print(df.head(), "\n")
 
 ### Only take the first 100 rows of the Datafile
 #############################################################################################
 df1 = df.iloc[:100:, ]
-print(df1.head(), "\n")
 
 ### Change the pandas Dataframe to a NumpyAarray to check the shape of the reduced Dataset
 #############################################################################################
