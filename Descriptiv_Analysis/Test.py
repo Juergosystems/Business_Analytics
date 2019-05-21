@@ -9,4 +9,4 @@ df=pd.DataFrame(data)
 
 plt.plot(x='Store', y='Weekly_Sales')
 
-
+plt.show() # tested
