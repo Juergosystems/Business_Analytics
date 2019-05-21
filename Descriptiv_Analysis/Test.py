@@ -18,7 +18,7 @@ df1 = df.iloc[:100:, ]
 ### Change the pandas Dataframe to a NumpyAarray to check the shape of the reduced Dataset
 #############################################################################################
 df1_np = np.array(df1)
-print("Shape of the reduced Dataset:", df1_np.shape)
+print("Shape of the reduced Dataset:", df1_np.shape, " (row,column)")
 
 ### Plot a Histogramm of the reduced Dataset
 #############################################################################################
