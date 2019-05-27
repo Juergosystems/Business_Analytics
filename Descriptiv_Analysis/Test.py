@@ -22,5 +22,8 @@ print("Shape of the reduced Dataset:", df1_np.shape, " (row,column)")
 
 ### Plot a Histogramm of the reduced Dataset
 #############################################################################################
-hist = df_reduced.hist()
+#hist = df_reduced.hist()
+#plt.show()
+
+hist = df
 plt.show()
