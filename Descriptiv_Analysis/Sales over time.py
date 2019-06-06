@@ -8,7 +8,7 @@ df = df.sort_values('Date', ascending=True)
 df_store1 = df[df.Store == 1]
 
 # plot graph with grouping
-df_store1.groupby(['Date', 'Dept']).sum()['Weekly_Sales'].unstack().plot(kind='scatter')
+df_store1.groupby(['Date', 'Dept']).sum()['Weekly_Sales'].unstack().plot()
 
 ax = plt.subplot(111)
 
