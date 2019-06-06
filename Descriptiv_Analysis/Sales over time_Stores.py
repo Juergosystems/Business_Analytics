@@ -1,9 +1,17 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
+from matplotlib import cm
+import seaborn as sns
 
+# read data set
 df_train = pd.read_csv('train.csv')
+
+# sort data by date
 df_train = df_train.sort_values('Date', ascending=True)
+
+# set color palette to 45 colors
+sns.set_palette(sns.color_palette("hls", 45))
 
 # plot graph with grouping
 df_train.groupby(['Date', 'Store']).sum()['Weekly_Sales'].unstack().plot(linewidth = 0.7)
