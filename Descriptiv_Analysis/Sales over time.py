@@ -2,11 +2,11 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
 
-df = pd.read_csv('train.csv')
-df = df.sort_values('Date', ascending=True)
+df_stores = pd.read_csv('train.csv')
+df_stores = df_stores.sort_values('Date', ascending=True)
 
 # create dataframe with data for store 1 only
-df_store1 = df[df.Store == 1]
+df_store1 = df_stores[df_stores.Store == 1]
 
 # set color palette to 99 colors
 sns.set_palette(sns.color_palette("hls", 99))
