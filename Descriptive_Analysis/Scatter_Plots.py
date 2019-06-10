@@ -14,6 +14,7 @@ dataset = train.merge(stores, how='left').merge(features, how='left')
 dataset = dataset[['Weekly_Sales','Store', 'Dept','CPI', 'Unemployment' , 'IsHoliday', 'Type', 'Size', 'Temperature', 'Fuel_Price',
                    'MarkDown1', 'MarkDown2', 'MarkDown3', 'MarkDown4', 'MarkDown5','Date']]
 
+# Plot all the features agains the Weekly_Sales
 rows = [3,2]
 r = 0
 for i in [1,10]:
