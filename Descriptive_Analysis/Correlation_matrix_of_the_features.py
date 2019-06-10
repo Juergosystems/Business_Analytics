@@ -3,6 +3,7 @@ matplotlib.use('MacOSX')
 import pandas as pd
 import seaborn as sns; sns.set(style="ticks", color_codes=True)
 import matplotlib.pyplot as plt
+from mpl_toolkits.axes_grid1 import make_axes_locatable
 
 # read data
 train = pd.read_csv("../Data/train.csv",sep=',', header=0)
@@ -16,12 +17,15 @@ dataset = dataset[['Weekly_Sales','Store', 'Dept', 'Date', 'IsHoliday', 'Type', 
 
 def plot_corr(df):
     plt.figure(figsize=(10,10))
-    plt.imshow(df.corr(), cmap=plt.cm.Reds, interpolation='nearest')
-    plt.colorbar()
     tick_marks = [i for i in range(len(df.columns))]
     plt.xticks(tick_marks, df.columns, rotation='vertical')
     plt.yticks(tick_marks, df.columns)
     plt.title('Correlation Matrix')
+    ax = plt.gca()
+    im = ax.imshow(df.corr(), cmap=plt.cm.Reds, interpolation='nearest')
+    divider = make_axes_locatable(ax)
+    cax = divider.append_axes("right", size="5%", pad=0.1)
+    plt.colorbar(im, cax=cax)
     plt.show()
 
 dataset_for_corr = dataset.drop(columns=['Type', 'Date'])
