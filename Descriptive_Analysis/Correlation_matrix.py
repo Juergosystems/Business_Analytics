@@ -11,8 +11,8 @@ stores = pd.read_csv("../Data/stores.csv",sep=',', header=0)
 
 # merge the different files into one dataset to work with
 dataset = train.merge(stores, how='left').merge(features, how='left')
-print(dataset.head())
-
+dataset = dataset[['Weekly_Sales','Store', 'Dept', 'Date', 'IsHoliday', 'Type', 'Size', 'Temperature', 'Fuel_Price',
+                   'MarkDown1', 'MarkDown2', 'MarkDown3', 'MarkDown4', 'MarkDown5', 'CPI', 'Unemployment']]
 
 def plot_corr(df):
     plt.figure(figsize=(10,10))
