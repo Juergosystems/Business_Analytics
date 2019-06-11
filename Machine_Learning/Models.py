@@ -10,8 +10,8 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_absolute_error
 from sklearn.model_selection import KFold
 from sklearn import preprocessing
+from sklearn.decomposition import KernelPCA
 from sklearn.preprocessing import StandardScaler, RobustScaler, MinMaxScaler
-
 
 # Data Import
 ########################################################################################################################
@@ -69,7 +69,7 @@ X_dataset_scaled = scaler.fit_transform(X_dataset)
 
 # Overview after scaling preprocessing
 X_train = pd.DataFrame(X_dataset_scaled, columns=column_names)
-dataset = pd.concat([dataset[['Weekly_Sales']], X_train], axis=1)
+dataset = pd.concat([dataset['Weekly_Sales'], X_train], axis=1)
 summary = dataset.describe()
 summary.to_excel('../Data/summary_after_scaling_preprocessing.xlsx', header=True, encoding='utf8')
 
