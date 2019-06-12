@@ -13,6 +13,7 @@ from sklearn import preprocessing
 from sklearn.decomposition import KernelPCA
 from sklearn.preprocessing import StandardScaler, RobustScaler, MinMaxScaler
 
+
 # Data Import
 ########################################################################################################################
 
@@ -55,7 +56,7 @@ for i in ['Weekly_Sales','MarkDown2','MarkDown3']:
     indexNames = dataset[dataset[i] < 0 ].index
     dataset.drop(indexNames , inplace=True, axis=0)
 
-# Overview after quality preprocessing
+# Overview after quality preprocessing and reduction to only 5 stores
 summary = dataset.describe()
 summary.to_excel('../Data/summary_after_quality_preprocessing.xlsx', header=True, encoding='utf8')
 
@@ -72,6 +73,7 @@ X_train = pd.DataFrame(X_dataset_scaled, columns=column_names)
 dataset = pd.concat([dataset['Weekly_Sales'], X_train], axis=1)
 summary = dataset.describe()
 summary.to_excel('../Data/summary_after_scaling_preprocessing.xlsx', header=True, encoding='utf8')
+
 
 # Modeling
 ########################################################################################################################
