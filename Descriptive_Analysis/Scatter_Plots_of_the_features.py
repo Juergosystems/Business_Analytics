@@ -28,6 +28,7 @@ for i in [1,10]:
                 if i == 15:
                     col.set_visible(False)
                 i += 1
-    plt.show()
+    plt.savefig('../Images/Scatterplots' + str(r) + '.png')
+
     r += 1
 

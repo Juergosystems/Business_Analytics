@@ -26,7 +26,7 @@ def plot_corr(df):
     divider = make_axes_locatable(ax)
     cax = divider.append_axes("right", size="5%", pad=0.1)
     plt.colorbar(im, cax=cax)
-    plt.show()
+    plt.savefig('../Images/Correlation_matrix.png')
 
 dataset_for_corr = dataset.drop(columns=['Type', 'Date'])
 
