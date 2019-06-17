@@ -4,6 +4,7 @@ import pandas as pd
 import seaborn as sns; sns.set(style="ticks", color_codes=True)
 import matplotlib.pyplot as plt
 from mpl_toolkits.axes_grid1 import make_axes_locatable
+from sklearn import preprocessing
 
 # read data
 train = pd.read_csv("../Data/train.csv",sep=',', header=0)
@@ -14,6 +15,14 @@ stores = pd.read_csv("../Data/stores.csv",sep=',', header=0)
 dataset = train.merge(stores, how='left').merge(features, how='left')
 dataset = dataset[['Weekly_Sales','Store', 'Dept', 'Date', 'IsHoliday', 'Type', 'Size', 'Temperature', 'Fuel_Price',
                    'MarkDown1', 'MarkDown2', 'MarkDown3', 'MarkDown4', 'MarkDown5', 'CPI', 'Unemployment']]
+
+cat_col = ['IsHoliday','Type']
+
+for col in cat_col:
+    encoder = preprocessing.LabelEncoder()
+    encoder.fit(dataset[col].values.astype('str'))
+    dataset[col] = encoder.transform(dataset[col].values.astype('str'))
+
 
 def plot_corr(df):
     plt.figure(figsize=(10,10))
@@ -28,6 +37,6 @@ def plot_corr(df):
     plt.colorbar(im, cax=cax)
     plt.savefig('../Images/Correlation_matrix.png')
 
-dataset_for_corr = dataset.drop(columns=['Type', 'Date'])
+dataset_for_corr = dataset.drop(columns=['Store', 'Dept', 'Date', 'IsHoliday', 'Type'])
 
 plot_corr(dataset_for_corr)
