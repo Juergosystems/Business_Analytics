@@ -22,7 +22,7 @@ for col in cat_col:
     encoder.fit(dataset[col].values.astype('str'))
     dataset[col] = encoder.transform(dataset[col].values.astype('str'))
 
-dataset1 = dataset.drop(columns=[ 'MarkDown1', 'MarkDown2', 'MarkDown3', 'MarkDown4', 'MarkDown5','Date','Store','CPI','Unemployment' ,'IsHoliday','Temperature', 'Fuel_Price'])
+dataset1 = dataset.drop(columns=[ 'MarkDown1', 'MarkDown2', 'MarkDown3', 'MarkDown4', 'MarkDown5','Date','Store','CPI','Unemployment' ,'Temperature', 'Fuel_Price'])
 
 sns.pairplot(dataset1)
 plt.savefig('../Images/Pair_plots.png')
