@@ -1,5 +1,5 @@
 import matplotlib
-matplotlib.use('MacOSX')
+matplotlib.use('tkagg')
 import pandas as pd
 import seaborn as sns; sns.set(style="ticks", color_codes=True)
 import matplotlib.pyplot as plt
@@ -24,5 +24,8 @@ for col in cat_col:
 
 dataset1 = dataset.drop(columns=[ 'MarkDown1', 'MarkDown2', 'MarkDown3', 'MarkDown4', 'MarkDown5','Date','Store','CPI','Unemployment' ,'Temperature', 'Fuel_Price'])
 
-sns.pairplot(dataset1)
+g = sns.pairplot(dataset1, size=2.0)
+g.fig.set_size_inches(12,12)
+
 plt.savefig('../Images/Pair_plots.png')
+

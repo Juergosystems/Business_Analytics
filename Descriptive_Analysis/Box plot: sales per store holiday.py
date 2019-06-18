@@ -10,4 +10,5 @@ ax.set_ylabel("Weekly Sales")
 plt.title("")
 plt.suptitle("")
 
+
 plt.savefig('../Images/boxplot_weekly_sales.png')
