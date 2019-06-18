@@ -2,16 +2,14 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
 
+# read data
 df_stores = pd.read_csv('train.csv')
 df_stores = df_stores.sort_values('Date', ascending=True)
 
-# create dataframe with data for store 1 only
-df_store4 = df_stores[df_stores.Store == 4]
+# create dataframes with data for one store each
 df_store10 = df_stores[df_stores.Store == 10]
-df_store14 = df_stores[df_stores.Store == 14]
 df_store23 = df_stores[df_stores.Store == 23]
 df_store30 = df_stores[df_stores.Store == 30]
-df_store43 = df_stores[df_stores.Store == 43]
 
 # set color palette to 99 colors
 sns.set_palette(sns.color_palette("hls", 99))
@@ -29,4 +27,4 @@ ax3.legend('')
 # Put a legend to the right of the current axis
 plt.xticks(fontsize=6)
 
-plt.show()
+plt.savefig('../Images/weekly_sales_over_time_departments')

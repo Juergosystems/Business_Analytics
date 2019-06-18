@@ -1,14 +1,17 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 
+# read data
 df_features = pd.read_csv('features.csv')
 df_features = df_features.sort_values('Date', ascending=True)
 
+# create dataframes for the stores only
 df_stores = df_features[df_features['Store'].isin([10,23, 30])]
 df_store10 = df_features[df_features.Store == 10]
 df_store23 = df_features[df_features.Store == 23]
 df_store30 = df_features[df_features.Store == 30]
 
+# create plot with 15 subplots, one for each store per markdown
 fig, axes = plt.subplots(nrows=3, ncols=5, sharex=True, figsize=(12,10))
 ax1 = df_store10.boxplot(by='IsHoliday', column='MarkDown1', ax=axes[0,0])
 axes[0,0].set_title('Markdown 1', fontsize=10)
@@ -69,4 +72,4 @@ plt.subplots_adjust(top=0.92, bottom=0.08, left=0.08, right=0.98, hspace=0.25,
 
 plt.suptitle('')
 
-plt.show()
+plt.savefig('../Images/environmental_factors_boxplots')
