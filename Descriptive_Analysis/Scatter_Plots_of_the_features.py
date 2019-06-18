@@ -1,5 +1,5 @@
 import matplotlib
-matplotlib.use('MacOSX')
+matplotlib.use('tkagg')
 import pandas as pd
 import seaborn as sns; sns.set(style="ticks", color_codes=True)
 import matplotlib.pyplot as plt
