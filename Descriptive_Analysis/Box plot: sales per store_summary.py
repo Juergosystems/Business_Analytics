@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
 
-df_stores = pd.read_csv('train.csv')
+df_stores = pd.read_csv("../Data/train.csv",sep=',', header=0)
 
 # create dataset only containing weeks without holidays
 df_noHoliday = df_stores[df_stores.IsHoliday == 0]
@@ -24,4 +24,4 @@ ax2.set_xlabel('')
 ax2.set_ylabel("Weekly Sales")
 plt.suptitle('')
 
-plt.savefig('../Images/boxplots_weekly_sales')
+plt.savefig('../Images/boxplots_weekly_sales.png')

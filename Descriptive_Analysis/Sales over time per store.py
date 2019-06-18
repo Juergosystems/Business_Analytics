@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
 
-df_stores = pd.read_csv('train.csv')
+df_stores = pd.read_csv("../Data/train.csv",sep=',', header=0)
 df_stores = df_stores.sort_values('Date', ascending=True)
 
 # set color palette to 99 colors
@@ -23,4 +23,4 @@ ax.set_xlabel('Date', fontsize=12)
 plt.xticks(fontsize=12, rotation = 45)
 plt.yticks(fontsize=12)
 
-plt.savefig('../Images/weekly_sales_over_time_stores')
+plt.savefig('../Images/weekly_sales_over_time_stores.png')

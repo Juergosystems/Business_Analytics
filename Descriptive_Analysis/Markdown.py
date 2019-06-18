@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 # read data
-df_features = pd.read_csv('features.csv')
+df_features = pd.read_csv("../Data/features.csv",sep=',', header=0)
 df_features = df_features.sort_values('Date', ascending=True)
 
 # create dataframe for store 10, 23 and 30 only
@@ -29,4 +29,4 @@ ax5.title.set_size('8')
 # format axes
 plt.xticks(fontsize=6)
 
-plt.savefig('../Images/markdowns')
+plt.savefig('../Images/markdowns.png')

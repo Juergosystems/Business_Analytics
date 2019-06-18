@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 # read data
-df_stores = pd.read_csv('train.csv')
+df_stores = pd.read_csv("../Data/train.csv",sep=',', header=0)
 
 # create boxplot for weekly sales without outliers
 ax = df_stores.boxplot(by='Store', column='Weekly_Sales', figsize=(20,10), showfliers=False)

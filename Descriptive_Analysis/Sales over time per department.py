@@ -3,7 +3,7 @@ import pandas as pd
 import seaborn as sns
 
 # read data
-df_stores = pd.read_csv('train.csv')
+df_stores = pd.read_csv("../Data/train.csv",sep=',', header=0)
 df_stores = df_stores.sort_values('Date', ascending=True)
 
 # create dataframes with data for one store each
@@ -27,4 +27,4 @@ ax3.legend('')
 # Put a legend to the right of the current axis
 plt.xticks(fontsize=6)
 
-plt.savefig('../Images/weekly_sales_over_time_departments')
+plt.savefig('../Images/weekly_sales_over_time_departments.png')

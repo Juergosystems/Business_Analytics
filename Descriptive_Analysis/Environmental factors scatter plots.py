@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 # read data
-df_features = pd.read_csv('features.csv')
+df_features = pd.read_csv("../Data/features.csv",sep=',', header=0)
 df_features = df_features.sort_values('Date', ascending=True)
 
 # create dataframes for the stores only
@@ -72,4 +72,4 @@ plt.subplots_adjust(top=0.92, bottom=0.08, left=0.08, right=0.98, hspace=0.25,
 
 plt.suptitle('')
 
-plt.savefig('../Images/environmental_factors_boxplots')
+plt.savefig('../Images/environmental_factors_boxplots.png')

@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 # read data
-df_features = pd.read_csv('features.csv')
+df_features = pd.read_csv("../Data/features.csv",sep=',', header=0)
 df_features = df_features.sort_values('Date', ascending=True)
 
 # define dataframe that only contains information regarding stores 10, 23 and 30
