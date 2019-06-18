@@ -218,19 +218,10 @@ X_train_basic.describe()
 
 ### Preprocessing
 
-#### Scaling
-"""
-
-scaler_basic = MinMaxScaler()
+"""#### Create Numpy-Array"""
 
 X_train_basic_np = scaler.fit_transform(np.array(X_train_basic))
 X_valid_basic_np = scaler.transform(np.array(X_valid_basic))
-
-print('Scaled sample:')
-for i in range(5): 
-  print(X_train_basic_np[i])
-
-"""#### Create Numpy-Array"""
 
 Y_train_basic_np = np.array(Y_train_basic)
 Y_valid_basic_np = np.array(Y_valid_basic)
